@@ -1,0 +1,9 @@
+
+import requests
+
+url = 'http://apis.data.go.kr/1262000/CountryPopulationService2/getCountryPopulationList2'
+serviceKey = 'dtbWOdJ/Cz5HE0DGLU+CRPe7pOW0NIQBUcGEqsHZaTRiYCI/5+zugwzQjcvuId7NPdg6rUiW+ft3fm7yqyD4pw=='
+params ={'serviceKey' : serviceKey, 'pageNo' : '1', 'numOfRows' : '10', 'cond[country_nm::EQ]' : '가나', 'cond[country_iso_alp2::EQ]' : 'GH', 'returnType' : 'JSON' }
+
+response = requests.get(url, params=params)
+print(response.content)

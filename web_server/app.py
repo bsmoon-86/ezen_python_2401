@@ -23,6 +23,10 @@ def index():
 def second():
     return 'Second Page'
 
+@app.route('/third')
+def third():
+    return render_template('third.html')
+
 @app.route('/corona')
 def corona():
     # 유저가 보낸 ServiceKey를 변수에 저장 
