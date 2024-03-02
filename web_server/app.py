@@ -11,16 +11,18 @@ app = Flask(__name__)
 
 ## 웹 서버의 기본 주소 localhost:8080
 
-# 네비게이터 
+# 네비게이터 (라우트 함수는 해당하는 경로로 요청이 들어왔을때 아래의 함수를 연결해주는 함수)
 ## '/' -> localhost:8080/ 로 요청이 들어왔을 때
 ## 바로 아래의 함수로 연결 (함수를 호출)
 @app.route('/')
 def index():
     # return "Hello World"
+    ## render_template는 templates 폴더 안에 있는 html문서를 유저에게 보내주는 함수
     return render_template('a.html')
 
 @app.route('/second')
 def second():
+    # render_template 함수를 사용하지 않고 문자열을 적어주면 해당 문자열을 유저에게 보낸다.
     return 'Second Page'
 
 @app.route('/third')
